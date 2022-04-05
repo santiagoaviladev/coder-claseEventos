@@ -1,11 +1,29 @@
-<form id="myForm" ></form>
+<form id="myForm" >
 <input type="text" id="nombre" name="nombre" placeholder="Nombre: "/>
 <input type="text" id="apellido" name="apellido" placeholder="Apellido: "/>
-<input type="submit" value="enviar">
+<input type="submit" value="enviar" id="enviar">
 </form>
 
 <script>
 
     //Submit 
+    const nodoFormulario = document.querySelector("#myForm");
+    nodoFormulario.addEventListener("submit", (event)=>{
+
+        event.preventDefault();
+
+        const nombre = document.querySelector("#nombre");
+        const apellido = document.querySelector("#nombre");
+        document.querySelector("#enviar").value="Enviando...";
+        if(nombre.value.trim()!=="" && apellido.value.trim()!=="")
+        {
+            alert("ENVIADO OK");
+        }
+        else 
+        {
+            alert("NO ESTÁ COMPLETO");
+        }
+
+    })
 
 </script>

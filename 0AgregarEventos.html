@@ -1,13 +1,16 @@
-<button id="btn">BOTÓN DE PRUEBA</button>
+<button id="btn" onmouseover="console.log('OVER');">BOTÓN DE PRUEBA</button>
 <script>
-
+    const nodoBTN = document.querySelector("#btn");
+    
     //Add Event Listener
-
+    nodoBTN.addEventListener("click", ()=>alert("HOLA"));
 
     // on - 
+    nodoBTN.onclick = ()=> {
+        console.log("HOLA, ESTO ES UNA ACCION DEL BOTÓN");
+    }
 
-
-    // Intern function
+    
     
 
 </script>

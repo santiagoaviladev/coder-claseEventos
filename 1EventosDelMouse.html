@@ -1,20 +1,61 @@
-<button id="btn">BOTÓN DE PRUEBA</button>
+<button id="btn">Versión Nocturna</button>
+<h1>Hola</h1>
+<div id="lista"></div>
 <script>
-
+    const nodobtn = document.getElementById("btn");
+    
+    
     //MouseDown
+    
+    nodobtn.addEventListener("mousedown", ()=>{
+        console.log("MOUSE DOWN");
+        document.body.style="background-color:black;color:white";
 
+    })
 
     // MouseUp
+   
+    nodobtn.addEventListener("mouseup", ()=>{
+        console.log("MOUSE UP");
+        document.body.style="background-color:white;color:black";
 
+    })
 
     // MouseOver
+    nodobtn.addEventListener("mouseover", ()=>{
+        console.log("MOUSE OVER");
+        nodobtn.innerHTML="YA SOY OTRO TEXTO";
+
+    })
 
     //MouseOut
+    nodobtn.addEventListener("mouseout", ()=>{
+        console.log("MOUSE OUT");
+        nodobtn.style="border:10px solid blue";
 
+    })
 
     //MouseMove
+    nodobtn.addEventListener("mousemove", ()=>{
+        console.log("MOUSE MOVE");
+    
 
-    //click
+    })
+
+    let contador=0;
+    //onclick
+    nodobtn.addEventListener("click", ()=>{
+
+        const nodoLista = document.querySelector("#lista");
+        nodoLista.innerHTML=`Estudiante: Emanuel<br>
+        Estudiante: Emiliano<br>
+        Estudiante: Oliver<br>
+        Estudiante: Santiago`;
+
+        contador++;
+        alert(contador);
+
+    })
     
 
 </script>

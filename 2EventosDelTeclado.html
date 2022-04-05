@@ -2,21 +2,36 @@
 <input type="text" id="nombre" name="nombre" placeholder="Nombre: "/>
 <input type="text" id="apellido" name="apellido" placeholder="Apellido: "/>
 
-</form>
+
 
 <script>
 
     //KeyDown
-
+    const nombre = document.querySelector("#nombre");
+    nombre.addEventListener("keydown", ()=>{
+        console.log("TECLA OPRIMIDA");
+    })
 
     //KeyUp
+    nombre.addEventListener("keyup", ()=>{
+        console.log("TECLA SOLTADA");
+    })
 
+
+    const apellido = document.querySelector("#apellido");
 
    //Change
-
+   apellido.addEventListener("change", ()=>{
+        console.log("CAMBIO EL VALOR");
+    })
 
    //Input
+   apellido.addEventListener("input", ()=>{
+        console.log("CAMBIO EL VALOR input");
+        let valor = apellido.value;
 
+        console.log(valor);
+    })
    //
     
 
