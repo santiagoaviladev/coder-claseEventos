@@ -28,7 +28,7 @@ function mostrarMenu()
      const myBtn = document.createElement("button");
      myBtn.setAttribute("class", "styledBtn");
      myBtn.innerHTML=categoria.nombre;
-     //Add Event 
+     myBtn.addEventListener("click", ()=>mostrarProductos(categoria.id));
      document.body.appendChild(myBtn);
    })
 }
@@ -38,4 +38,36 @@ function escribirMensaje()
   const nodoMensaje = document.createElement("p");
   nodoMensaje.innerHTML= "Por favor, selecciona una categoría para continuar:";
   document.body.appendChild(nodoMensaje);
+}
+
+
+function mostrarProductos(idCategoria)
+{
+  
+  // Filtrar los productos de la categoria
+  // Mostrar los productos
+  
+  const productosFiltrados = filtrarProductos(idCategoria);
+  let cadena ='';
+  productosFiltrados.forEach((element)=>{
+    cadena+=`<div>
+
+    Nombre Producto: ${element.nombre}<br>
+    Precio Producto: ${element.precio}<br>
+
+    
+    </div>`
+
+    document.querySelector("#productos").innerHTML=cadena;
+  });
+
+
+
+}
+
+function filtrarProductos(idCategoria)
+{
+
+    return productos.filter(producto=>producto.categoria===idCategoria);
+
 }
